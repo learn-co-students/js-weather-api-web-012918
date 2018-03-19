@@ -49,7 +49,7 @@ function generateDataSet(labels, data) {
   });
 }
 
-var API_KEY = "8cd97c107d1e0717";
+
 var URL = "http://api.wunderground.com/api/" + API_KEY + "/hourly/q/NY/New_York.json";
 
 function getWeather(){
