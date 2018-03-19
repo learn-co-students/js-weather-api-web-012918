@@ -1,15 +1,31 @@
 function getFahrenheits(result){
-  // Your code goes here
+  const degrees = result.hourly_forecast.map(hour => parseInt(hour.temp.english))
+  return degrees
 }
 
 function getHours(result){
-  // Your code goes here
+  const hours = result.hourly_forecast.map(hour => parseInt(hour.FCTTIME.hour))
+  return hours
 }
 
 function generateDataSet(labels, data) {
-  // Your code goes here
+  let weatherData = {
+    labels: labels,
+    datasets: [{
+      label: "Weather Data",
+      data: data
+    }]
+  }
+  return weatherData
 }
 
-function makeRequest(endpoint, success) {
-  // Your code goes here
-}
+
+
+// data: {
+//       labels: ["January", "February", "March", "April", "May", "June", "July"],
+//       datasets: [{
+//           label: "My First dataset",
+//           backgroundColor: 'rgb(255, 99, 132)',
+//           borderColor: 'rgb(255, 99, 132)',
+//           data: [0, 10, 5, 2, 20, 30, 45],
+//       }]
