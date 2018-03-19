@@ -1,9 +1,9 @@
 function getFahrenheits(result){
-  // Your code goes here
+  return result["hourly_forecast"].map(info => info["FCTTIME"]["hour"])
 }
 
 function getHours(result){
-  // Your code goes here
+  return result["hourly_forecast"].map(info => info["temp"]["english"])
 }
 
 function generateDataSet(labels, data) {
@@ -11,5 +11,9 @@ function generateDataSet(labels, data) {
 }
 
 function makeRequest(endpoint, success) {
-  // Your code goes here
+  fetch(endpoint)
+  .then(resp => {
+    resp.json()})
+    .then(json =>
+      success(json)
 }
